@@ -6,12 +6,12 @@
 </head>
 <body class="center-screen">
 
-    <div class="photo-container fade-in">
+    <div class="photo-container">
         <img id="photo" src="{{ url_for('static', filename='images/image1.jpg') }}">
         <p id="message"></p>
     </div>
 
-    <!-- Background Music (Plays Once) -->
+    <!-- Background Music -->
     <audio id="bgMusic" autoplay loop>
         <source src="{{ url_for('static', filename='music.mp3') }}" type="audio/mpeg">
     </audio>
@@ -46,15 +46,16 @@ function showNextPhoto() {
 
     messageElement.innerText = messages[current];
 
-    imgElement.classList.remove("fade-in");
-    void imgElement.offsetWidth;
-    imgElement.classList.add("fade-in");
+    imgElement.style.opacity = 0;
+    setTimeout(() => {
+        imgElement.src = "/static/images/image" + (current + 1) + ".jpg";
+        imgElement.style.opacity = 1;
+    }, 500);
 
     current++;
 
     if (current < totalPhotos) {
         setTimeout(showNextPhoto, 5000);
-        imgElement.src = "/static/images/image" + (current + 1) + ".jpg";
     } else {
         setTimeout(() => {
             window.location.href = "/final";

@@ -116,28 +116,8 @@ button:hover {
     to { text-shadow: 0 0 20px #ff66b2; }
 }
 
+/* Replay Button */
 .replay-btn {
-    position: relative;
-    z-index: 2;
     margin-top: 40px;
-    padding: 14px 30px;
-    font-size: 18px;
-    border-radius: 30px;
-    border: none;
     background-color: #ff66b2;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.replay-btn:hover {
-    transform: scale(1.1);
-}
-
-.particles {
-    pointer-events: none;   /* Allows clicking through particles */
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
 }
