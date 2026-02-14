@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Birthday ❤️</title>
+
+    <!-- Stylish Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="final-page">
+
+    <!-- Background Particles -->
+    <div class="particles"></div>
+
+    <!-- Birthday Message -->
+    <h1 class="final-message">
+        <span class="line1">Happy Birthday my Love</span>
+        <span class="line2">forever and everything ❤️</span>
+    </h1>
+
+    <!-- Replay Button -->
+    <button class="replay-btn"
+        onclick="window.location.href='{{ url_for('home') }}'">
+        💌 Replay Memories
+    </button>
+
+</body>
+</html>

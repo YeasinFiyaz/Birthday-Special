@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #ffe6f0, #fff0f5);
+    overflow: hidden;
+}
+
+/* Center everything */
+.center-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Intro */
+.intro-box {
+    text-align: center;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: #ff4d88;
+    color: white;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #e6005c;
+}
+
+/* Photo Page */
+.photo-container {
+    text-align: center;
+}
+
+.photo-container img {
+    width: 350px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.3);
+    transition: opacity 1s ease-in-out;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #2f2f2f;
+}
+
+/* Final Page */
+.final-page {
+    background: radial-gradient(circle at center, #fff0f5, #ffd6e7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Sparkling Particles */
+.particles::before,
+.particles::after {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background-image: radial-gradient(#ff99cc 2px, transparent 2px);
+    background-size: 50px 50px;
+    animation: moveParticles 20s linear infinite;
+    opacity: 0.4;
+}
+
+@keyframes moveParticles {
+    from { transform: translateY(0); }
+    to { transform: translateY(-200px); }
+}
+
+/* Final Message */
+.final-message {
+    font-family: 'Great Vibes', cursive;
+    font-size: 75px;
+    color: #2f2f2f;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.line1, .line2 {
+    display: block;
+}
+
+.line1 {
+    margin-bottom: 25px;
+}
+
+.line2 {
+    font-size: 55px;
+    letter-spacing: 2px;
+}
+
+/* Sparkle animation */
+.final-message span {
+    animation: sparkle 2s infinite alternate;
+}
+
+@keyframes sparkle {
+    from { text-shadow: 0 0 10px #ff99cc; }
+    to { text-shadow: 0 0 20px #ff66b2; }
+}
+
+.replay-btn {
+    position: relative;
+    z-index: 2;
+    margin-top: 40px;
+    padding: 14px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: none;
+    background-color: #ff66b2;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.replay-btn:hover {
+    transform: scale(1.1);
+}
+
+.particles {
+    pointer-events: none;   /* Allows clicking through particles */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}

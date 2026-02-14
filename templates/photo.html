@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Memories ❤️</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="center-screen">
+
+    <div class="photo-container fade-in">
+        <img id="photo" src="{{ url_for('static', filename='images/image1.jpg') }}">
+        <p id="message"></p>
+    </div>
+
+    <!-- Background Music (Plays Once) -->
+    <audio id="bgMusic" autoplay loop>
+        <source src="{{ url_for('static', filename='music.mp3') }}" type="audio/mpeg">
+    </audio>
+
+<script>
+
+const messages = [
+"You are the most beautiful blessing in my life ❤️",
+"Your smile makes my darkest days brighter ✨",
+"Every moment with you feels like magic 💕",
+"You are my peace, my happiness, my forever 🌹",
+"My heart feels safest when I am with you 🥰",
+"You are the love story I always dreamed of 💌",
+"With you, every day is special 🌸",
+"You are my home and my adventure 🌍",
+"I fall in love with you more every day ❤️",
+"Your laughter is my favorite sound 🎶",
+"You complete me in every possible way 💖",
+"Forever isn't long enough with you ⏳",
+"You are my sunshine after every storm ☀",
+"I am the luckiest man because of you 💎",
+"I will choose you again and again, always ❤️"
+];
+
+let current = 0;
+const totalPhotos = 15;
+
+const imgElement = document.getElementById("photo");
+const messageElement = document.getElementById("message");
+
+function showNextPhoto() {
+
+    messageElement.innerText = messages[current];
+
+    imgElement.classList.remove("fade-in");
+    void imgElement.offsetWidth;
+    imgElement.classList.add("fade-in");
+
+    current++;
+
+    if (current < totalPhotos) {
+        setTimeout(showNextPhoto, 5000);
+        imgElement.src = "/static/images/image" + (current + 1) + ".jpg";
+    } else {
+        setTimeout(() => {
+            window.location.href = "/final";
+        }, 5000);
+    }
+}
+
+showNextPhoto();
+
+</script>
+
+</body>
+</html>
